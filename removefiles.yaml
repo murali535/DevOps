@@ -1,0 +1,12 @@
+- name : Demo on removing files
+  hosts : DEV
+  tasks :
+    - name : remove the files
+      file :
+        path : "{{item}}"
+        state : absent
+      with_items :
+        - /home/ec2-user/abc
+        - /home/ec2-user/def
+        - /home/ec2-user/ghi
+        - /home/ec2-user/jkl

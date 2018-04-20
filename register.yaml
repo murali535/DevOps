@@ -1,0 +1,9 @@
+- name : Demo on register variables
+  hosts : DEV
+  tasks :
+    - name : register variables
+      shell : pwd
+      register : out
+    - name : display register variables
+      debug :
+        msg : "{{out}}"

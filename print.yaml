@@ -1,0 +1,6 @@
+- name : Demo on print module
+  hosts : DEV
+  tasks :
+    - name : print the message
+      debug : 
+        msg : "user is perfect"

@@ -1,0 +1,11 @@
+- name : Demo on installaing and uninstallaing servers
+  hosts : DEV
+  become : yes
+  tasks :
+    - name : installaing and uninstallaing servers
+      yum :
+        name : "{{item.name}}"
+        state : "{{item.state}}"
+      with_items : 
+        - { name: 'httpd', state : 'latest' }
+        - { name: 'httpd-devel', state : 'absent' }

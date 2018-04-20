@@ -1,0 +1,17 @@
+- name : Demo on setting register variables
+  hosts : DEV
+  tasks :
+    - name : setting register variables
+      shell : id -u
+      register : out
+    - name : printing register variables
+      debug :
+        msg : "{{out.stdout}}"
+    - name : setting a variable
+      set_fact :
+        ID : "{{out.stdout}}"
+    - name : print ID
+      debug :
+        msg : "{{ID}}"
+
+

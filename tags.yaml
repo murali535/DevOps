@@ -1,0 +1,15 @@
+task level tags
+- name : creating tags
+  hosts : DEV
+  tasks : 
+    - name : Task1
+      tags :
+        - DEV
+      debug :
+        msg : "hello from DEV Task1"
+
+    - name : Task2
+      tags :
+        - PROD
+      debug : 
+        msg : "hello from PROD Task2"      

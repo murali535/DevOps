@@ -1,0 +1,38 @@
+- name : Demo on find and remove file
+  hosts : DEV
+  tasks :
+    - name : finding the .log file
+      find :
+        paths : /home/ec2-user
+        patterns : '*.log'
+      register : out
+
+    - name : print the output
+      debug :
+        msg : "{{out}}"
+
+    - name : removing the file
+      file :
+        path : "{{item.path}}"
+        state : absent
+      with_items : "{{out.files}}"
+
+- name : Demo on find and remove file
+  hosts : DEV
+  tasks :
+    - name : finding the .txt file
+      find :
+        paths : /home/ec2-user
+        patterns : '*.txt'
+      register : out
+
+    - name : print the output
+      debug :
+        msg : "{{out}}"
+
+    - name : removing the file
+      file :
+        path : "{{item.path}}"
+        state : absent
+      with_items : "{{out.files}}"
+

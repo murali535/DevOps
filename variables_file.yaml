@@ -1,0 +1,8 @@
+- name : Demo on variable files
+  hosts : DEV
+  vars_files :
+    - db_variables_file.yaml
+  tasks :
+    - name : getting variables from files
+      debug :
+        msg : "db is {{dbname}}"

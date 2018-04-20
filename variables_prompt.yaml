@@ -1,0 +1,9 @@
+- name : Demo on variables_prompt
+  hosts : DEV
+  vars_prompt :
+    - name : username
+      prompt : enter the username
+  tasks :
+    - name : printing prompt variables
+      debug :
+        msg : "username is {{username}}"

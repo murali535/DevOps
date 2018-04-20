@@ -1,0 +1,18 @@
+- name : Demo on checking statstics of a file
+  hosts : DEV
+  tasks :
+    - name : checking a file exist or not
+      stat :
+        path : /etc/passwd
+      register : out
+    - name : printing output
+      debug :
+        msg : "{{out}}"
+    - name : file exist
+      debug :
+        msg : "file is exist"
+      when : out.stat.exists == true
+    - name : file dosen't exist
+      debug : 
+        msg : "file doesnt exist"
+      when : out.stat.exists == false

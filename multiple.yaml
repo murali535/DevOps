@@ -1,0 +1,18 @@
+- name : play1
+  hosts : DEV
+  tasks :
+    - name : first play1 book
+      debug : 
+        msg : "this is first play1 book"
+    - name : play1_task2
+      debug : 
+        msg : "this is second play1"
+- name : play2
+  hosts : DEV
+  tasks :
+    - name : second play2 book
+      debug :
+        msg : "this is second"
+    - name : second play 
+      debug : 
+        msg : "this is third"

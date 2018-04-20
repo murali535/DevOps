@@ -1,0 +1,10 @@
+- name : checking the errors
+  hosts : DEV
+  tasks :
+    - name : fail this task
+      shell : ls -l
+      register : out
+      ignore_errors : True
+    - name : print the output
+      debug :
+        msg : "{{out}}"

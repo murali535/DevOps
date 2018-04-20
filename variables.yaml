@@ -1,0 +1,13 @@
+- name : Demo on variables
+  hosts : DEV
+  tasks :
+    - name : first task
+      vars :
+        x : Devops
+      debug :
+        msg : "am learning {{x}}"
+    - name : second task
+      vars :
+        x : Devops
+      debug : 
+        msg : "am studying {{x}}"

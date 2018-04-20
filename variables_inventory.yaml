@@ -1,0 +1,6 @@
+- name : Demo on inventory 
+  hosts : DEV
+  tasks :
+    - name : variables from inventory file 
+      debug :
+        msg : "inventory variable name {{NAME}}"
