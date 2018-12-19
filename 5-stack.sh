@@ -46,7 +46,7 @@ systemctl restart httpd &>>$log
 
 VALIDATE $? "restarting web server"
 
-yum install gcc httpd-devel -y &>>$log
+yum install gcc httpd-devel java -y &>>$log
 
 VALIDATE $? "installing gcc and httpd-devel"
 
